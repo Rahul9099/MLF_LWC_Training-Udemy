@@ -1,0 +1,71 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-19-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="two way data binding">
+      <div class="slds-var-m-around_medium">
+        <lightning-input label="city" title="city" onkeyup={handleCityChange}></lightning-input>
+        <lightning-input label="name" title="name" onkeyup={handleNameChange}></lightning-input>
+        <div class="slds-align_absolute-center">
+            <p>hello i am {name} and my profile is dev</p>
+            <p>i live in {person.city}</p>
+        </div>
+      </div>
+    </lightning-card>
+    <br>
+    <br>
+    <br>
+    <h3 class="slds-align_absolute-center">Getters in lwc</h3>
+    <lightning-card title="getter for dynamic data validation ">
+        <div class="slds-var-m-around_medium">
+          <p>the name is {firstName} and surname is {lastName} and fullName is {fullName}</p>
+        </div>
+    </lightning-card>
+    <br>
+    <br>
+    <br>
+    <h3 class="slds-align_absolute-center">conditional render in lwc</h3>
+    <lightning-card title="conditional render in lwc">
+        <template if:true={isShowing}>
+            <div class="slds-var-m-around_medium">
+                <p>the name is {firstName} and surname is {lastName} and fullName is {fullName}</p>
+            </div>
+        </template>
+        <template if:false={isShowing}>
+            <div class="slds-var-m-around_medium">
+                <p>Please click show button</p>
+            </div>
+        </template>
+        <div class="slds-align_absolute-center">
+            <lightning-button label="Show" title="Show" variant="brand" onclick={handleShow}></lightning-button>  
+        </div>
+    </lightning-card>
+    <br>
+    <br>
+    <br>
+    <h3 class="slds-align_absolute-center">iterator in lwc</h3>
+    <lightning-card title="iterator in lwc">
+        <div class="slds-align_absolute-center">
+            <ul>
+                <template iterator:it={ceoList}>  
+                    <div key={it.value.id}>
+                        <template if:true={it.first}>
+                            Here is the list of ceo's
+                        </template>
+                        <li>
+                            <h3>{it.value.company}</h3>
+                            <h5>{it.value.name}</h5>
+                        </li>    
+                        <template if:true={it.last}>
+                            Ends here 
+                        </template>
+                    </div>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template>
