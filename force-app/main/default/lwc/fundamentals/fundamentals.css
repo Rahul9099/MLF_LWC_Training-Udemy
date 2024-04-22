@@ -1,4 +1,4 @@
 .select{
     color: var(--lwc-brandAccessible);
-    background-color: var(--lwc-colorBackgroundError);
+    /* background-color: var(--lwc-colorBackgroundError); */
 }
