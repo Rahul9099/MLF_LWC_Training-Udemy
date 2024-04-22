@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-19-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Quiz app">
+        <div class="slds-var-m-around_medium">
+            <div class="banner">
+                <div class="slds-align_absolute-center">
+                       <strong>SCORE - </strong> {score} 
+                </div>
+            </div>
+            <template for:each={questions} for:item="i">
+                <div key={i.id}>
+                    <div><strong>{i.id} - {i.que}</strong></div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                        <span><input type="radio" name={i.id} value={i.options.a} onclick={handleClick}> {i.options.a}</span>
+                        </div>
+                        <div class="slds-col">
+                        <span><input type="radio" name={i.id} value={i.options.b} onclick={handleClick}> {i.options.b}</span>
+                        </div>
+                        <div class="slds-col">
+                        <span><input type="radio" name={i.id} value={i.options.c} onclick={handleClick}> {i.options.c}</span>
+                        </div>
+                        <div class="slds-col">
+                        <span><input type="radio" name={i.id} value={i.options.d} onclick={handleClick}> {i.options.d}</span>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

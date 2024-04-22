@@ -2,7 +2,7 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 04-19-2024
+  @last modified on  : 04-22-2024
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
@@ -66,6 +66,29 @@
                     </div>
                 </template>
             </ul>
+        </div>
+    </lightning-card>
+    <br>
+    <br>
+    <br>
+    <!-- Query selector in lwc -->
+    <lightning-card title="Query selector in lwc">
+        <div class="slds-align_absolute-center">
+            <h1 class="select">Select the h1 on click and replace with text</h1>
+            <h1 class="select">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, modi?</h1>
+            <h1 class="select">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, deserunt.</h1>
+            <div class="child" lwc:dom="manual"></div>
+            <br>
+            <lightning-button label="qSelector" title="qSelector" variant="brand" onclick={handleqSelector}></lightning-button>
+        </div>
+    </lightning-card>
+    <br>
+    <br>
+    <br>
+    <!-- CSS in lwc -->
+    <lightning-card title="CSS in lwc">
+        <div class="slds-align_absolute-center slds-var-m-around_medium">
+           
         </div>
     </lightning-card>
 </template>

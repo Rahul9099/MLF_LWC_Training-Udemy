@@ -43,4 +43,15 @@ export default class Fundamentals extends LightningElement {
     get isShowing(){
         return this.isTrue
     }
+    handleqSelector(){
+       const allh1Ele= this.template.querySelectorAll("h1");
+       Array.from(allh1Ele).forEach(ele=>{
+        ele.innerHTML = `Change all h1 values`; 
+       })
+       const h1Element= this.template.querySelector(".select");
+       h1Element.innerHTML = `Hello change from queryselector`;
+
+       const child = this.template.querySelector(".child");
+       child.innerHTML = `<p> hello i am child </p>`;
+    }
 }
