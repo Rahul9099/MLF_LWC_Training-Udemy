@@ -1,0 +1,16 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-22-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="parent to child on action">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="number" value={value} onkeyup={handleChange} label="give progress value"></lightning-input>
+            <lightning-button label="alert" onclick={handleClick} variant="brand"></lightning-button>
+        </div>
+        <c-p2c-progress-bar-child progress-value={value}></c-p2c-progress-bar-child>
+    </lightning-card>
+</template>
