@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card label="Account record view form">
+        <div class="slds-var-m_around_medium">
+            <lightning-record-view-form
+            object-api-name={objectApiName}
+            record-id={recordId}>
+            <div style="padding-left: 20px;">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-cols slds-size_6-of-12">
+                        <template for:each={fieldsOne} for:item="field">
+                            <lightning-output-field field-name={field}
+                            key={field}></lightning-output-field>
+                        </template>
+                    </div>
+                    <div class="slds-cols slds-size_6-of-12">
+                        <template for:each={fieldsTwo} for:item="field">
+                            <lightning-output-field field-name={field}
+                            key={field}></lightning-output-field>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>
