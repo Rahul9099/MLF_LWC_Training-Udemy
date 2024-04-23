@@ -1,0 +1,51 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card label="static resource demo">
+        <div class="slds-var-m_around_medium">
+            <img src={image} alt="DemoImage" onerror={handleImageError} height="30px;">
+            <div class="main">
+                <marquee class="marq" bgcolor="Green" direction="left" loop="">
+                    <div class="geek1">
+                        GeeksforGeeks
+                    </div>
+                    <div class="geek2">
+                        A computer science portal for geeks
+                    </div>
+                </marquee>
+            </div>
+        </div>
+    </lightning-card>
+    <br>
+    <br>
+    <br>
+    <lightning-card title="Content Asset Files">
+        <div class="slds-var-m-around_medium">
+            <iframe src={file} frameborder="0" height="50%" width="50%"></iframe>
+            <button>
+                <!-- <a href={file}>Download</a> -->
+            </button>
+        </div>
+    </lightning-card>
+    <br>
+    <br>
+    <br>
+    <lightning-card title="Internationalization">
+        <div class="slds-var-m-around_medium">
+            <!-- <h1>{formatedNum}</h1> -->
+        </div>
+    </lightning-card>
+    <br>
+    <br>
+    <br>
+    <lightning-card title="Check Permission">
+        <div class="slds-var-m-around_medium">
+            <!-- <h1>{formatedNum}</h1> -->
+        </div>
+    </lightning-card>
+</template>
