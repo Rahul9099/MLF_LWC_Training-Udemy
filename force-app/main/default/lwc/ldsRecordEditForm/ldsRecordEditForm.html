@@ -1,3 +1,31 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-24-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
 <template>
-    
+    <lightning-card label="lightning record edit form">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-edit-form object-api-name={objectApiName} 
+            onsuccess={handleSuccess}
+            onerror={handleError}> 
+                <lightning-messages></lightning-messages>
+                <template for:each={fields} for:item="f">
+                    <div key={f.id}>
+                    <label class="">{f.label}</label>
+                    <lightning-input-field variant="label-hidden"  field-name={f.field} required ></lightning-input-field>
+                    </div>
+                </template>
+                <div class="slds-m-around_small">
+                    <lightning-button label="cancel" onclick={handleResetAll} ></lightning-button>
+                </div>
+                <div class="slds-m-around_small">
+                    <lightning-button variant="brand" type="submit" label="submit"  ></lightning-button>
+                </div>
+                
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
 </template>
