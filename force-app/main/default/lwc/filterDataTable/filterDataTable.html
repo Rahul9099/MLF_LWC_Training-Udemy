@@ -1,0 +1,45 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-25-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="client side filtering">
+        <div class="slds-var-m-around_medium">
+           <lightning-layout>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-combobox
+                label="filter"
+                options={options}
+                value={selectedValue}
+                onchange={handleFilterChange}
+                 ></lightning-combobox>
+            </lightning-layout-item>
+               <lightning-layout-item size="4" padding="around-small">
+                   <lightning-input label="search" onchange={handleSeachInput}></lightning-input>
+               </lightning-layout-item>
+           </lightning-layout>
+            <table>
+                <thead>
+                  <tr>
+                    <template for:each={heading} for:item="heading">
+                        <th key={heading}>{heading}</th>
+                    </template>
+                  </tr>    
+                </thead>
+                <tbody>
+                    <template for:each={filteredData} for:item="data">
+                        <tr key={data.Id}>
+                            <th>{data.Id}</th>
+                            <th>{data.Name}</th>
+                            <th>{data.Title}</th>
+                            <th>{data.Email}</th>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>
