@@ -7,6 +7,7 @@ export default class FilterDataTable extends LightningElement {
     serverData=[]
     searchKey;
     timer;
+    sortDirection = 'asc'
     selectedValue='Name'
     options=[
         {label:'Name',value:'Name'},
@@ -47,4 +48,19 @@ export default class FilterDataTable extends LightningElement {
         }
     }
 
+    /*sorting of table */
+    sortHandler(event){
+        this.sortedBy =event.target.value;
+        this.filteredData =[...this.sortedBy(this.filteredData)];
+    }
+    sortBy(data){
+        const cloneData =[...data];
+        cloneData.sort((a,b)=>{
+            if(a[this.sortedBy] === b[this.sortedBy]){
+                return 0;
+            }
+            this.sortDirection === 'desc' ?a[this.sortedBy] > b[this.sortedBy] ?-1:1:a[this.sortedBy]<b[this.sortedBy] ?-1:1
+        })
+        return cloneData;
+    }
 }
