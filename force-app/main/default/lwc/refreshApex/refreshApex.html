@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-25-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card label="Refresh Apex">
+        {isContact}
+        <template if:true={isContact}>
+            <lightning-datatable
+            key-field="Id"
+            columns={columns}
+            data={contacts.data}
+            draft-values={draftValues}
+            onsave={handleSave}
+            >
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
