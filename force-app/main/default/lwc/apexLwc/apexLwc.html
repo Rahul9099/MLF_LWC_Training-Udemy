@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-24-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card label="apex wire method">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+            label="Account Type"
+            value={selected}
+            options={options}
+            onchange={handleChange}>
+            </lightning-combobox>
+            <template if:true={account}>
+                <template for:each={account} for:item="it">
+                    <div class="slds-box slds-box__xx-small" key={it.id}>
+                        <p><strong>Name</strong>{it.Name}</p>
+                        <p><strong>Type</strong>{it.type}</p>
+                        <p><strong>Industry</strong>{it.Industry}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

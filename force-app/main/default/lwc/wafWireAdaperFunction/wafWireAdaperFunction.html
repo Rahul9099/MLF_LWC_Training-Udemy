@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-24-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card label="user details">
+        {userId}
+        <lightning-combobox
+        name="Industry"
+        label="Industry"
+        value={selected}
+        options={options}
+        onchange={handleChange}>
+        </lightning-combobox>
+    </lightning-card>
+</template>
