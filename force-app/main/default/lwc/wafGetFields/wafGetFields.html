@@ -1,3 +1,17 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-29-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
 <template>
-    
+    <form class="createForm">
+        <lightning-input label="firstName" name="FirstName" onchange={handleChange}></lightning-input>
+        <lightning-input label="lastName" name="LastName" onchange={handleChange}></lightning-input>
+        <lightning-input label="phone" name="Phone" onchange={handleChange}></lightning-input>
+        <lightning-input label="title" name="Title" onchange={handleChange}></lightning-input>
+        <lightning-input label="email" name="Email" onchange={handleChange}></lightning-input>
+        <lightning-button label="submit" onclick={handleSubmit} variant="brand"></lightning-button>
+    </form>
 </template>

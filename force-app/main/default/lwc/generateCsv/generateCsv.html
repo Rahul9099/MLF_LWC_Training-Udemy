@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-29-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card label="Csv generate">
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Industry</th>
+                <th>Annual Revenue</th>
+            </thead>
+            <tbody>
+                <template if:true={accountData}>
+                    <template for:each={accountData} for:item="dt">
+                            <tr key={dt.Id}>
+                            <td>{dt.Id}</td>
+                            <td>{dt.Name}</td>
+                            <td>{dt.Industry}</td>
+                            <td>{dt.AnnualRevenue}</td>
+                           </tr>
+                    </template>
+                </template> 
+            </tbody>
+        </table>
+    </lightning-card>
+    <lightning-button variant="brand" label="generate"  onclick={downloadCSVFile}></lightning-button>
+</template>

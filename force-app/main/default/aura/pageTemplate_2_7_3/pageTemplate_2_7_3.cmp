@@ -15,7 +15,8 @@ access="global"
 <aura:attribute name="center" type="Aura.Component[]" access="global"/>
 <aura:attribute name="right" type="Aura.Component[]" access="global"/>
 <div aura:id="container">
-    <lightning:layoutItem aura:id="leftColumn" size="2">
+    <lightning:layout>
+        <lightning:layoutItem aura:id="leftColumn" size="2">
         {!v.left}
     </lightning:layoutItem>
     <lightning:layoutItem aura:id="centerColumn"
@@ -25,6 +26,7 @@ access="global"
     <lightning:layoutItem aura:id="rightColumn" size="3">
         {!v.right}
     </lightning:layoutItem>
+    </lightning:layout>    
 </div>
     
 </aura:component>	

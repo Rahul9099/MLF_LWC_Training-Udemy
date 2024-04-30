@@ -10,6 +10,10 @@ export default class LyfCycleHook extends LightningElement {
         console.log('connected callback');
     }
     renderedCallback(){
+        if(this.isTrue){
+            return
+        }
+        this.isTrue = true;
         console.log('render callback');
     }
     disconnectedCallback(){

@@ -1,0 +1,47 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-29-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card  size="xx-small" icon-name="action:approval" label="Car filter" title="Car filter">
+       <div class="slds-var-m-around_medium">
+        <lightning-input type="text" label="Search Key" value={filters.value} onchange={handleSearch}></lightning-input>
+        <section>
+            <lightning-slider label="Max Price" step="100" max="999999" min="0" onchange={handleMaxPriceChange}></lightning-slider>
+        </section>
+        <section>
+            <section>
+                <h2>Category</h2>
+                <template if:true={categories.data}>
+                    <template for:each={categories.data.values} for:item="it">
+                        <lightning-input 
+                        checked 
+                        data-name="categoryType"
+                        label={it.label}
+                        data-value={it.value}
+                        type="checkbox" key={it.label}
+                        onchange={handleCheckBox}></lightning-input>
+                    </template>
+                </template>
+            </section>
+            <section>
+                <h2>Make</h2>
+                <template if:true={makeType.data}>
+                    <template for:each={makeType.data.values} for:item="it">
+                        <lightning-input 
+                        checked 
+                        data-name="makeType"
+                        data-value={it.value}
+                        label={it.label}
+                        type="checkbox" key={it.label}
+                        onchange={handleCheckBox}></lightning-input>
+                    </template>
+                </template>
+            </section>
+        </section>
+       </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-29-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div>
+        <div class="content">
+            <img src={car.Picture_Url__c} alt="car image" class="slds-align_absolute-center carImage">
+            <div>
+                <p class="slds-align_absolute-center title">
+                    {car.Name}
+                </p>
+                <p class="slds-align_absolute-center">
+                    MSRP:
+                    <lightning-formatted-number format-style="currency" class="price" value={car.MSRP__c} currency-code="USD" maximum-fraction-digits="0"></lightning-formatted-number>
+                </p>
+            </div>
+        </div>
+    </div>
+</template>

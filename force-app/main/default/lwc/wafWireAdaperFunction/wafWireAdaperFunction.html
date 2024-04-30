@@ -2,11 +2,24 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 04-24-2024
+  @last modified on  : 04-29-2024
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
+
 <template>
-    <lightning-card label="user details">
+  <h1>wire adapter and properties</h1>
+  <h2>get record + get field values</h2>
+  <ul>
+    <li>{name}</li>
+  </ul>
+  <lightning-combobox
+    name="Rating"
+    label="Rating"
+    value={selectedValue}
+    options={options}
+    onchange={handleChange}
+  ></lightning-combobox>
+    <!-- <lightning-card label="user details">
         {userId}
         <lightning-combobox
         name="Industry"
@@ -15,5 +28,5 @@
         options={options}
         onchange={handleChange}>
         </lightning-combobox>
-    </lightning-card>
+    </lightning-card> -->
 </template>

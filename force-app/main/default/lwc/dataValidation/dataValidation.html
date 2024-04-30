@@ -1,0 +1,14 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-29-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card label="date validation" title="date validation">
+        <lightning-input label="startDate" name="startDate" type="date" onchange={handleDate}></lightning-input>
+        <lightning-input label="EndDate" name="EndDate" type="date" onchange={handleDate}></lightning-input>
+        <lightning-button onclick={handleValidate} label="validate" title="validate" variant="brand" ></lightning-button>
+    </lightning-card>
+</template>

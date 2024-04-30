@@ -2,9 +2,16 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 04-22-2024
+  @last modified on  : 04-30-2024
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <h1>child lyf cycle component</h1>
+    <lightning-card label="child lyf cycle component">
+      <form>
+        <lightning-input label="name" name="name" onchange={handleChange}></lightning-input>
+        <lightning-input label="age" name="age" onchange={handleChange}></lightning-input>
+        <lightning-input label="phone" name="phone" onchange={handleChange}></lightning-input>
+        <lightning-button type="submit" onclick={submitform} label="submit" variant="brand"></lightning-button>
+      </form>
+    </lightning-card>
 </template>
