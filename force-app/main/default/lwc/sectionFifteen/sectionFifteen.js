@@ -1,5 +1,6 @@
 import { LightningElement } from 'lwc';
 import img from '@salesforce/resourceUrl/DemoImage'
+import label from '@salesforce/label/standarLabel';
 
 // content assest
 import tcFile from '@salesforce/contentAssetUrl/tcFile'
