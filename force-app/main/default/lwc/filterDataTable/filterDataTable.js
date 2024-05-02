@@ -51,7 +51,7 @@ export default class FilterDataTable extends LightningElement {
     /*sorting of table */
     sortHandler(event){
         this.sortedBy =event.target.value;
-        this.filteredData =[...this.sortedBy(this.filteredData)];
+        this.filteredData =[...this.sortBy(this.filteredData)];
     }
     sortBy(data){
         const cloneData =[...data];

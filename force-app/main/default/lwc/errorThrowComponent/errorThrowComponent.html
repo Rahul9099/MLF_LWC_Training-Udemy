@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-02-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+     <!-- error handling -->
+     <template if:true={error}>
+        <c-error-boundary error={error} onerrorclosed={handleError}></c-error-boundary>
+    </template>
+
+    <!-- record edit form-->
+    <lightning-record-edit-form record-id={recordId} object-api-name="Account" onerror={handleFormError}>
+        <lightning-input-field field-name='Name'></lightning-input-field>
+    <!-- submit button -->
+    <lightning-button class="slds-m-top_small button-fixed" variant="brand" type="submit" name="save" label="Save"></lightning-button>
+    </lightning-record-edit-form>
+
+    <!-- error from child element -->
+    <c-child-error></c-child-error>
+</template>
