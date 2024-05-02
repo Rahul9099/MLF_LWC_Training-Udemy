@@ -51,6 +51,7 @@ export default class ErrorBoundary extends LightningElement {
         if(this.error.detail){
             this.errorMessageToDisplay += this.error.detail;
         }
+        
     }
 
     closeError() {

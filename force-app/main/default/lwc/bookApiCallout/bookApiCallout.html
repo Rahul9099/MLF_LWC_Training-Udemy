@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-02-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card label="Book Callout">
+        <template if:true={error}>
+            <c-error-boundary error={error} onerrorclosed={handleError}></c-error-boundary>
+        </template>
+        <div class="slds-var-p-around_medium">
+            <lightning-input type="search" onchange={handleSearch} label="search" title="search"></lightning-input>
+        </div>
+        <div class="slds-var-p-around_medium">
+            <lightning-layout multiple-rows="true">
+                <template if:true={isAvailable}>
+                 <template for:each={serverData} for:item="it">
+                     <div key={it.id}>
+                       <lightning-layout-item class="slds-box slds-text-align_center" padding="around-medium" >
+                        
+                        <img src={it.volumeInfo.imageLinks.thumbnail} alt="book image" height="150px">
+                        <h2>{it.volumeInfo.title}</h2>
+                        <p><strong>publishedDate</strong>{it.volumeInfo.title.publishedDate}</p>
+                       </lightning-layout-item> 
+                     </div>
+                 </template>
+                </template>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
