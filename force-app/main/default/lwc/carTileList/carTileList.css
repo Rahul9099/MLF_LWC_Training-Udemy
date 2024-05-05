@@ -2,3 +2,9 @@ c-car-tile{
     min-width: 200px;
     flex:1;
 }
+.content{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+background-color: aliceblue;
+}

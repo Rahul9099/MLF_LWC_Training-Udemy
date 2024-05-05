@@ -124,7 +124,7 @@ export default class NavigationInLwc extends NavigationMixin(LightningElement) {
             }
         })
     }
-    //navigate to external web page
+    //navigate to lwc
     navigateToLwc(){
         let defination={
             componentDef:'c:fundamentals',
@@ -135,7 +135,8 @@ export default class NavigationInLwc extends NavigationMixin(LightningElement) {
         this[NavigationMixin.Navigate]({
             type:'standard__webPage',
             attributes:{
-            url:'/one/one.app#'+btoa(JSON.stringify(defination))
+            url:'/one/one.app#'+Buffer.from(JSON.stringify(defination),'binary').toString('base64')
+           // url:'/one/one.app#'+btoa(JSON.stringify(defination))
             }
         })
     }

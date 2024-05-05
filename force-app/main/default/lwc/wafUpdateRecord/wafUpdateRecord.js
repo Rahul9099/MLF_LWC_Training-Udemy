@@ -55,7 +55,7 @@ export default class WafUpdateRecord extends LightningElement{
             this.deleteContacts(ids)
         }
     }
-    deleteContacts(ids){
+      deleteContacts(ids){
       const promises = ids.map(item=>{
         deleteRecord(item)
       })

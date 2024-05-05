@@ -2,7 +2,7 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 04-29-2024
+  @last modified on  : 05-05-2024
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
@@ -19,7 +19,7 @@
                     <template for:each={categories.data.values} for:item="it">
                         <lightning-input 
                         checked 
-                        data-name="categoryType"
+                        data-name="categories"
                         label={it.label}
                         data-value={it.value}
                         type="checkbox" key={it.label}

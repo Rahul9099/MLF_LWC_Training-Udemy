@@ -2,10 +2,11 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 04-26-2024
+  @last modified on  : 05-05-2024
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
+  <template if:true={recordId}>
     <lightning-card icon-name="action:approval" size="xx-small" label="Car Car" title={carName}>
       <img class="carImage" src={carPictureUrl} alt="carImage"/>
       <lightning-record-view-form onload={handleRecordLoad} object-api-name={car} density="compact" record-id={recordId}>
@@ -18,4 +19,10 @@
         <lightning-output-field field-name={controlField}></lightning-output-field>
       </lightning-record-view-form>
     </lightning-card>
+  </template>
+  <template if:false={recordId}>
+    <lightning-card icon-name="action:approval" size="xx-small" label="Car Car" >
+      <img class="carImage" src="" alt="carImage"/>
+    </lightning-card>
+  </template>
 </template>

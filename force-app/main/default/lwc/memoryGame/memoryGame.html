@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-02-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="container">
+        <lightning-card label="Memory Game">
+            <div class="score-panel">
+                <div>{} Move's</div>
+                <div>Timer: {}</div>
+                <div class="restart"><i class="fa-solid fa-rotate-right"></i></div>
+            </div>
+            <div class="game-panel slds-grid slds-grid_vertical-align-start">
+                <ul class="grid-container deck card-deck">
+                    <template for:each={gameArray} for:item="it"></template>
+                </ul>
+            </div>
+        </lightning-card>
+    </div>
+</template>

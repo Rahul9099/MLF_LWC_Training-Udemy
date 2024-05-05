@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-02-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+    <template if:true={error}>
+        <c-error-boundary error={error} onerrorclosed={handleError}></c-error-boundary>
+    </template>
+    <template if:true={isAvailable}>
+        <lightning-tree-grid 
+           columns={columns}
+           data={gridData}
+           hide-checkbox-column="true"
+           key-field="Name"
+        ></lightning-tree-grid>
+    </template>
+</template>

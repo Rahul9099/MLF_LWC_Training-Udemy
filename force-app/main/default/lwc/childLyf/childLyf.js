@@ -11,9 +11,9 @@ export default class ChildLyf extends LightningElement {
         console.error('child connected callback');
         //this is to show about disconnected callback
        // window.addEventListener('click',this.handleClick)
-      this.timer = setInterval(()=>{
-        console.log('---set interval called (child)');
-      },400)
+    //   this.timer = setInterval(()=>{
+    //     console.log('---set interval called (child)');
+    //   },400)
 
         let personData = JSON.parse(localStorage.getItem('person')); 
         this.personData =personData;

@@ -1,6 +1,7 @@
-import { LightningElement,track } from 'lwc';
+import { LightningElement,api,track } from 'lwc';
 
 export default class Fundamentals extends LightningElement {
+    @api recordId
     name='User'
     isTrue=false;
    @track person={

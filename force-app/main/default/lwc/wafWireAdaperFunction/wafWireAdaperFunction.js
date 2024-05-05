@@ -98,6 +98,7 @@ getAccountRecords({data,error}){
 get name() {
     return getFieldValue(this.data, Name);
 }
+
 @wire(getObjectInfo,{objectApiName:ACCOUNT_OBJECT})
 acc
 

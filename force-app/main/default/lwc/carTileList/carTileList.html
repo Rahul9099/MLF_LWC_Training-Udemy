@@ -2,7 +2,7 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 04-29-2024
+  @last modified on  : 05-05-2024
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
@@ -12,7 +12,7 @@
         <template if:true={carslist}>
           <div class="content">
             <template for:each={cars} for:item="car">
-                <c-car-tile car={car} key={car.Id}></c-car-tile>
+                <c-car-tile onselectedcar={handleSelectedCar} car={car} key={car.Id}></c-car-tile>
             </template>
           </div>
         </template>
