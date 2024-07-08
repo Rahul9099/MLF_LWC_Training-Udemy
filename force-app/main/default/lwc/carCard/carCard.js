@@ -1,6 +1,5 @@
 import { LightningElement, wire } from 'lwc';
-import { getFieldValue } from 'lightning/uiRecordApi';
-// Car__c schema
+
 import CAR_OBJECT from '@salesforce/schema/Car__c'
 import CATEGORY_FIELD from '@salesforce/schema/Car__c.Category__c'
 import NAME_FIELD from '@salesforce/schema/Car__c.Name'
@@ -10,42 +9,48 @@ import MAKE_FIELD from '@salesforce/schema/Car__c.Make__c'
 import FUEL_TYPE_FIELD from '@salesforce/schema/Car__c.Fuel_Type__c'
 import CONTROL_FIELD from '@salesforce/schema/Car__c.Control__c'
 import PICTURE_URL_FIELD from '@salesforce/schema/Car__c.Picture_Url__c'
-//import message channel
-import CarSelected_Mc from '@salesforce/messageChannel/CarSelected__c';
-import {APPLICATION_SCOPE,subscribe,publish,unsubscribe,MessageContext} from 'lightning/messageService'
+import { getFieldValue } from 'lightning/uiRecordApi';
+
+//import CarRecordId_MC from '@salesforce/messageChannel/CarRecordId__c';
+//import { MessageContext,subscribe,unsubscribe,APPLICATION_SCOPE } from 'lightning/messageService';
 
 export default class CarCard extends LightningElement {
-    recordId
+
+    car = CAR_OBJECT
+    recordId = 'a0R5j00000CajZJEAZ'
+    image;
     carName;
-    carPictureUrl;
-    car=CAR_OBJECT
-    categoryField =CATEGORY_FIELD;
-    msrpField =MSRP_FIELD;
-    fuelField = FUEL_TYPE_FIELD ;
-    seatsField = NUMBER_OF_SEATS_FIELD;
-    makeField =MAKE_FIELD;
-    controlField = CONTROL_FIELD;
+    seats = NUMBER_OF_SEATS_FIELD;
+    category=CATEGORY_FIELD;
+    msrp = MSRP_FIELD;
+    make = MAKE_FIELD;
+    fuel = FUEL_TYPE_FIELD;
+    control = CONTROL_FIELD;
     subscription;
 
-    @wire(MessageContext)
-    context 
+    // @wire(MessageContext)
+    // context
 
-    connectedCallback(){
-        this.subscription = subscribe(this.context,CarSelected_Mc,(message)=>{this.handleMessage(message)},{scope:APPLICATION_SCOPE})
+    // connectedCallback(){
+    //     this.subscription = subscribe(this.context,CarRecordId_MC,(message)=>{this.handleMessage(message)},{'scope':APPLICATION_SCOPE})
+    // }
+
+    // handleMessage(message){
+    //     this.recordId = message.carRecordId;
+    // }
+
+    // errorCallback(){
+    //     unsubscribe(this.subscription);
+    // }
+    
+    handleRecordViewOnLoad(event){
+        const {records} = event.detail
+        const record = records[this.recordId];
+        this.carName = getFieldValue(record,NAME_FIELD);
+        this.image = getFieldValue(record,PICTURE_URL_FIELD);
     }
 
-    handleMessage(message){
-        this.recordId = message.recordId
-    }
-    handleRecordLoad(event){
-        const{records}=event.detail;
-        console.log('---------------------------------------------------lightning view form'+JSON.stringify(event.detail));
-        const recordData = records[this.recordId]
-        this.carName = getFieldValue(recordData,NAME_FIELD);
-        this.carPictureUrl = getFieldValue(recordData,PICTURE_URL_FIELD);
-    }
-    disconnectedCallback(){
-        unsubscribe(this.subscription);
-        this.subscription=null;
+    get notAvailable(){
+        return false;
     }
 }

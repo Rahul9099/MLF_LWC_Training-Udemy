@@ -7,6 +7,7 @@ import Annual_revenue_field from '@salesforce/schema/Account.AnnualRevenue';
 
 export default class WafPartTwo extends LightningElement {
 
+    
     name;
     AnnualRevenue;
     owner

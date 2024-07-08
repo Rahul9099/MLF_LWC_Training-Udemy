@@ -9,6 +9,13 @@ export default class Fundamentals extends LightningElement {
         city:'Nagpur',
         lastName:'dange'
     }
+   @track props={
+        age:0,
+        onclick:this.handleIncrement.bind(this)
+    }
+    handleIncrement(){
+        this.props.age += 1;
+    }
     ceoList=[
         {
             id:1,

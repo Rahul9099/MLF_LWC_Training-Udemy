@@ -9,11 +9,15 @@ export default class LmsCompA extends LightningElement {
     context;
 
     connectedCallback(){
-        this.subscription = subscribe(this.context,SAMPLEMC,(message)=>{handleMessage},{scope:APPLICATION_SCOPE})
+        this.subscription = subscribe(this.context,SAMPLEMC,(message)=>{this.handleMessage(message)},{scope:APPLICATION_SCOPE})
     }
     message
-    handleChange(event){
-        this.message =event.target.value;
+    messageSentFromB;
+    handleMessage(event){
+        this.messageSentFromB = event.lmsData
+    }
+    handleChange(message){
+        this.message =message.target.value;
     }
     handleClick(){
        const values={lmsData:this.message}

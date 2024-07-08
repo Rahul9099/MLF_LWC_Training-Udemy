@@ -2,7 +2,7 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 04-22-2024
+  @last modified on  : 05-06-2024
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
@@ -92,4 +92,10 @@
            <lightning-button class="btn" label="change" title="change by js color"></lightning-button>
         </div>
     </lightning-card>
+    <br>
+    <br>
+    <br>
+    <h1>age---{props.age}</h1>
+    <!-- passing a function as prop to child -->
+    <c-c2p-child props={props}></c-c2p-child>
 </template>

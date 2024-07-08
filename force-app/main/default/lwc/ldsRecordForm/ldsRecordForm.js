@@ -5,9 +5,6 @@ import NAME_FIELD from '@salesforce/schema/Contact.Name';
 import ACCOUNT_ID_FIELD from '@salesforce/schema/Contact.AccountId';
 import EMAIL_FIELD from '@salesforce/schema/Contact.Email';
 
-
-
-
 export default class LdsRecordForm extends LightningElement {
     recordId = '003IR00001bogULYAY';
     object=CONTACT_OBJECT;

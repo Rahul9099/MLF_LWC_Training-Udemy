@@ -2,6 +2,7 @@ import { LightningElement, api } from 'lwc';
 import generatePdf from '@salesforce/apex/PdfController.generatePdf';
 
 
+
 export default class RtfPdfGeneration extends LightningElement {
     imageUrl='https://images.pexels.com/photos/430205/pexels-photo-430205.jpeg'
     invoiceData={

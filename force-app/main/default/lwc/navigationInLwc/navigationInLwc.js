@@ -10,7 +10,7 @@ export default class NavigationInLwc extends NavigationMixin(LightningElement) {
     @wire(CurrentPageReference)
     getCurrentPageRef(data,error){
         if(data){ 
-            this.pageRef = JSON.stringify(data);
+            this.pageRef = data
             console.log(JSON.stringify(data));
         }
         if(error){
@@ -90,7 +90,7 @@ export default class NavigationInLwc extends NavigationMixin(LightningElement) {
                 recordId:'003IU00002V9gxJYAR',
                // actionName:'view'
                actionName:'edit'
-            //  edit will open the record to edit
+               //  edit will open the record to edit
             }
         })
     }

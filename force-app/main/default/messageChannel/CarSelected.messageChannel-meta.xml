@@ -5,7 +5,7 @@
    <description>This Lightning Message Channel sends information from LWC to LWC</description>
 
    <lightningMessageFields>
-       <fieldName>recordId</fieldName>
+       <fieldName>carId</fieldName>
        <description>Record Id of selected car tile</description>
    </lightningMessageFields>
 

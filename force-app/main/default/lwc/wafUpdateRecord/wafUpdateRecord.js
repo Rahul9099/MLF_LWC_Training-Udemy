@@ -65,4 +65,5 @@ export default class WafUpdateRecord extends LightningElement{
         console.log(error);
       })
     }
+    
 }
